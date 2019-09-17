@@ -1,11 +1,12 @@
 package com.example.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.content.Intent;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 //startActivity(new Intent(MainActivity.this, newActivity.class));
                 break;
             case R.id.track:
-                //startActivity(new Intent(this, newActivity.class));
+                startActivity(new Intent(this, MapsActivity.class));
                 break;
             case R.id.flight:
                 startActivity(new Intent(MainActivity.this, InFlightActivity.class));
