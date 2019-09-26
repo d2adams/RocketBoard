@@ -39,4 +39,14 @@
         app:layout_constraintTop_toBottomOf="@+id/flight"
         tools:text="Track" />
 
+    <Button
+        android:id="@+id/PreviousFlights"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Previous Flights"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/track" />
+
 </android.support.constraint.ConstraintLayout>

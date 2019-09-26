@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button conn;
     Button trac;
     Button fli;
+    Button previousFlights;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
@@ -22,9 +23,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         conn = findViewById(R.id.connect);
         trac = findViewById(R.id.track);
         fli = findViewById(R.id.flight);
+        previousFlights = findViewById(R.id.PreviousFlights);
         conn.setOnClickListener(this);
         trac.setOnClickListener(this);
         fli.setOnClickListener(this);
+        previousFlights.setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             case R.id.flight:
                 startActivity(new Intent(MainActivity.this, InFlightActivity.class));
                 break;
+
+            case R.id.PreviousFlights:
+                startActivity(new Intent(MainActivity.this, FlightDataSelector.class));
         }
     }
 }
