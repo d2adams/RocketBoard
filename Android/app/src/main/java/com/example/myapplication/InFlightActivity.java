@@ -34,6 +34,7 @@ public class InFlightActivity extends AppCompatActivity {
                         });
                     }
                 } catch(InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         };
