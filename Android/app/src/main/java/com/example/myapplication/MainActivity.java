@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.connect:
-                //startActivity(new Intent(MainActivity.this, newActivity.class));
+                //Did this for now because lazy
+                startActivity(new Intent(MainActivity.this, FlightVisualizationActivity.class));
                 break;
             case R.id.track:
                 startActivity(new Intent(this, MapsActivity.class));
