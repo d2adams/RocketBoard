@@ -1,10 +1,16 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -23,7 +29,7 @@ public class FlightDataSelector extends AppCompatActivity {
         DataPacket testPacket = new DataPacket(testData);
 
         Date currentTime = Calendar.getInstance().getTime();
-        File file = new File(this.getFilesDir(), currentTime.toString());
+        File file = new File(this.getFilesDir(), "Flight: " + currentTime.toString());
         FileOutputStream outStream;
         try{
             outStream = openFileOutput(file.getName(), this.MODE_PRIVATE);
@@ -31,6 +37,25 @@ public class FlightDataSelector extends AppCompatActivity {
         } catch (Exception e){
             e.printStackTrace();
         }
+
+        File directory = this.getFilesDir();
+        String[] files = directory.list(new FilenameFilter(){
+            @Override
+            public boolean accept(File directory, String name){
+                return name.startsWith("Flight:");
+            }
+        });
+        String TAG ="Filelisting";
+
+        for (String name: files
+             ) {
+            Log.d(TAG,name);
+        }
+
+        RecyclerView rvFiles = (RecyclerView) findViewById(R.id.rvFiles);
+        FilesAdapter adapter = new FilesAdapter(files);
+        rvFiles.setAdapter(adapter);
+        rvFiles.setLayoutManager(new LinearLayoutManager(this));
 
         ///////////////////////////////////////////////
         //                END TEST CODE              //
