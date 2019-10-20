@@ -1,50 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InFlightActivity">
 
-    <TextView
-        android:id="@+id/altitude"
-        android:layout_width="60dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="200dp"
-        android:text="@string/altitude"
-        app:layout_constraintEnd_toStartOf="@+id/alt"
-        app:layout_constraintHorizontal_bias="0.906"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/in_flight_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/velocity"
-        android:layout_width="60dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="56dp"
-        android:text="@string/velocity"
-        app:layout_constraintEnd_toStartOf="@+id/vel"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/altitude" />
-
-    <TextView
-        android:id="@+id/alt"
-        android:layout_width="52dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="180dp"
-        android:text="@string/_0_ft"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/vel"
-        android:layout_width="52dp"
-        android:layout_height="17dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="180dp"
-        android:text="@string/_0_0_mph"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alt" />
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
