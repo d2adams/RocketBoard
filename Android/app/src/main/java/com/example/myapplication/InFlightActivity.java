@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class InFlightActivity extends AppCompatActivity {
+
     private RecyclerView recyclerView;
     private RecyclerView.Adapter fAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -16,6 +17,7 @@ public class InFlightActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_flight);
         getData();
