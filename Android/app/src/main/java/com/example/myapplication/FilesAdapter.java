@@ -36,6 +36,13 @@ public class FilesAdapter extends
                 }
             });
             viewButton = (Button) fileView.findViewById(R.id.view_button);
+            viewButton.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    Intent intent = new Intent(v.getContext(), FlightVisualizationActivity.class);
+                    intent.putExtra("FileName", fileNameTextView.getText());
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
 
