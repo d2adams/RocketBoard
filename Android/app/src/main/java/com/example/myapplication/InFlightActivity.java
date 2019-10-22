@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class InFlightActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter fAdapter;
+    private RecyclerView.LayoutManager layoutManager;
     private ArrayList<String> dataTypes = new ArrayList<>();
     private ArrayList<String> fData = new ArrayList<>();
 
