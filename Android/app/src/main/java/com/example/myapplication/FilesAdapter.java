@@ -1,15 +1,18 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
+
 
 public class FilesAdapter extends
         RecyclerView.Adapter<FilesAdapter.ViewHolder> {
@@ -25,7 +28,21 @@ public class FilesAdapter extends
 
             fileNameTextView = (TextView) fileView.findViewById(R.id.fileName);
             trackButton = (Button) fileView.findViewById(R.id.track_button);
+            trackButton.setOnClickListener( new View.OnClickListener(){
+                public void onClick(View v){
+                    Intent intent = new Intent(v.getContext(), MapsActivity.class);
+                    intent.putExtra("FileName", fileNameTextView.getText());
+                    v.getContext().startActivity(intent);
+                }
+            });
             viewButton = (Button) fileView.findViewById(R.id.view_button);
+            viewButton.setOnClickListener(new View.OnClickListener(){
+                public void onClick(View v){
+                    Intent intent = new Intent(v.getContext(), FlightVisualizationActivity.class);
+                    intent.putExtra("FileName", fileNameTextView.getText());
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
 
