@@ -195,8 +195,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (location != null) {
                 Log.i(TAG, location.getLatitude() + "," + location.getLongitude());
 
-                Toast.makeText(MapsActivity.this, Utils.getLocationText(location),
-                        Toast.LENGTH_SHORT).show();
+ //               Toast.makeText(MapsActivity.this, Utils.getLocationText(location),
+ //                       Toast.LENGTH_SHORT).show();
 
                 moveMap(location.getLatitude(), location.getLongitude());
             }
