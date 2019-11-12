@@ -1,11 +1,15 @@
 package com.example.myapplication;
 
+
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Bundle;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -270,5 +274,9 @@ public class InFlightActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+    //go to map
+    public void goToMaps(View view) {
+        startActivity(new Intent(this, MapsActivity.class));
+    }
 
 }

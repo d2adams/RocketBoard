@@ -54,3 +54,4 @@ public class inFlightAdapter extends RecyclerView.Adapter<inFlightAdapter.ViewHo
         }
     }
 }
+
