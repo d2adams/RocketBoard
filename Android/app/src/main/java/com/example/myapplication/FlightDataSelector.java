@@ -48,7 +48,7 @@ public class FlightDataSelector extends AppCompatActivity {
         String TAG ="Filelisting";
 
         for (String name: files
-             ) {
+        ) {
             Log.d(TAG,name);
         }
 
