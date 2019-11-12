@@ -21,22 +21,6 @@ public class FlightDataSelector extends AppCompatActivity {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight_data_selector);
-        ///////////////////////////////////////////////
-        //TEST CODE REMOVE WHEN ACTUALLY IMPLEMENTING//
-        ///////////////////////////////////////////////
-
-        String testData = "3:00,5.0,S,45.3,W,0.5,23.4,43.2,54.2,.02,.33,.41,205.3\n";
-        DataPacket testPacket = new DataPacket(testData);
-
-        Date currentTime = Calendar.getInstance().getTime();
-        File file = new File(this.getFilesDir(), "Flight: " + currentTime.toString());
-        FileOutputStream outStream;
-        try{
-            outStream = openFileOutput(file.getName(), this.MODE_PRIVATE);
-            outStream.write(testData.getBytes());
-        } catch (Exception e){
-            e.printStackTrace();
-        }
 
         File directory = this.getFilesDir();
         String[] files = directory.list(new FilenameFilter(){
@@ -45,20 +29,12 @@ public class FlightDataSelector extends AppCompatActivity {
                 return name.startsWith("Flight:");
             }
         });
-        String TAG ="Filelisting";
 
-        for (String name: files
-             ) {
-            Log.d(TAG,name);
-        }
 
         RecyclerView rvFiles = (RecyclerView) findViewById(R.id.rvFiles);
         FilesAdapter adapter = new FilesAdapter(files);
         rvFiles.setAdapter(adapter);
         rvFiles.setLayoutManager(new LinearLayoutManager(this));
 
-        ///////////////////////////////////////////////
-        //                END TEST CODE              //
-        ///////////////////////////////////////////////
     }
 }
