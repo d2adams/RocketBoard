@@ -199,7 +199,7 @@ public class LocationUpdatesService extends Service {
         if (!mChangingConfiguration && Utils.requestingLocationUpdates(this)) {
             Log.i(TAG, "Starting foreground service");
 
-            startForeground(NOTIFICATION_ID, getNotification());
+            //startForeground(NOTIFICATION_ID, getNotification());
         }
         return true; // Ensures onRebind() is called when a client re-binds.
     }
@@ -312,7 +312,7 @@ public class LocationUpdatesService extends Service {
 
         // Update notification content if running as a foreground service.
         if (serviceIsRunningInForeground(this)) {
-            mNotificationManager.notify(NOTIFICATION_ID, getNotification());
+           // mNotificationManager.notify(NOTIFICATION_ID, getNotification());
         }
     }
 
